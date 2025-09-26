@@ -119,6 +119,7 @@
             numberOf: '77',   // Replace 7 with your Number of People Attending field ID
             eventDays: '35',    // Replace 8 with your Event days you want attend field ID
 			member: '68',
+			memberType: '69',
 			student: '71'
         };
 
@@ -222,6 +223,7 @@
                            Number of people: ${submissionData.numberOf}<br>
                            Time: ${new Date().toLocaleTimeString()}<br>
 						   Member: ${submissionData.member}<br>
+						   Member Type: ${submissionData.memberType}<br>
 						   Student: ${submissionData.student}<br>`, 'warning');
 			   }
 			   else
@@ -233,7 +235,7 @@
 						   Payment: ${submissionData.paymentMethod}<br>
 						   Number of people: ${submissionData.numberOf}<br>
 						   Time: ${new Date().toLocaleTimeString()}<br>
-						   Member: ${submissionData.member}<br>
+						   Member Type: ${submissionData.memberType}<br>
 						   Student: ${submissionData.student}<br>`, 'success');
 				}
                 
@@ -290,6 +292,7 @@
                 eventDays: Array.isArray(eventDaysRaw) ? eventDaysRaw.join(", ") : eventDaysRaw || 'Unknown',
                 alreadyCheckedIn: answers[FIELD_IDS.checkinStatusAshtami]?.answer === 'Yes',
 				member: answers[FIELD_IDS.member]?.answer || 'No' ,
+				memberType: answers[FIELD_IDS.memberType]?.answer || 'NA' ,
 				student: answers[FIELD_IDS.student]?.answer || 'No' ,
                 hasPanchami: hasPanchami
             };
@@ -380,5 +383,6 @@
     </script>
 </body>
 </html>
+
 
 
